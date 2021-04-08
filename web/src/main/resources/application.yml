@@ -1,0 +1,6 @@
+
+
+demo.liquibase:
+    enabled: false
+    drop-first: false
+    change-log: classpath:liquibase/production_changelog.xml

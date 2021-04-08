@@ -1,0 +1,17 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <property name="bonusTable" value="bonus"/>
+    <property name="userBalanceTable" value="user_balance"/>
+    <property name="transactionHistoryTable" value="transaction_history"/>
+
+    <property name="idField" value="ID"/>
+
+    <property name="autoIncrement" value="true" dbms="hsql"/>
+
+    <include file="changelog/2019-04-23-bonus.xml" relativeToChangelogFile="true"/>
+
+<!--    <include file="changelog/embedded-load-data.xml" relativeToChangelogFile="true"/>-->
+
+</databaseChangeLog>

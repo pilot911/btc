@@ -1,0 +1,24 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+
+    <changeSet author="kkv" id="trx">
+        <comment>Таблица истории транзакций</comment>
+
+        <createTable tableName="${transactionHistoryTable}">
+            <column autoIncrement="${autoIncrement}" name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="txid" type="VARCHAR(4000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tx_type" type="INTEGER"/>
+            <column name="value" type="DOUBLE" />
+            <column name="tx_update_time" type="BIGINT" />
+            <column name="status" type="INTEGER" />
+            <column name="app_user_id" type="BIGINT" />
+            <column name="wallet_balance" type="DOUBLE" />
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

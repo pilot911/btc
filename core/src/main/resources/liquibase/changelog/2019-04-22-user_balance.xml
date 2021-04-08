@@ -1,0 +1,23 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet author="kkv" id="userBalance">
+        <comment>Таблица бонусов пользователя</comment>
+
+        <createTable tableName="${userBalanceTable}">
+            <column name="ID" type="BIGINT" autoIncrement="${autoIncrement}">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="USER_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BTC_BALANCE" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BONUS_BALANCE" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,25 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet author="kkv" id="bonus">
+        <comment>Таблица бонусов</comment>
+
+        <createTable tableName="${bonusTable}">
+            <column name="ID" type="BIGINT" autoIncrement="${autoIncrement}">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ACTIVATION_DEPOSIT_AMOUNT" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BONUS_AMOUNT" type="DOUBLE">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>
